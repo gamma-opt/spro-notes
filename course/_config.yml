@@ -1,5 +1,5 @@
-title: Course template
-author: Tunç Başar Köse
+title: Stochastic programming and robust optimisation
+author: Fabricio Oliveira
 logo: _static/sidebar_logo.png
 only_build_toc_files: true
 
@@ -22,7 +22,7 @@ parse:
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
-    targetname: book.tex   ### DON'T CHANGE: jupyterbook-pdf.yml expects this to be book.tex, so if you want to change this change that as well.
+    targetname: spro-notes.tex
 
 # Information about where the book exists on the web
 repository:
@@ -47,6 +47,7 @@ sphinx:
         # If you add something, you should probably add to latex_elements below as well
         macros:
           "reals": "\\mathbb{R}"
+<<<<<<< HEAD
           "integers": "\\mathbb{Z}"
           "symm": "\\mathbb{S}"
           "rank": "\\mathop{\\bf rank}"
@@ -109,3 +110,5 @@ sphinx:
         \newcommand{\brackets}[1]{\left[ #1 \right]}
         \newcommand{\floor}[1]{\lfloor #1 \rfloor}
         \newcommand{\ceil}[1]{\lceil #1 \rceil}
+=======
+>>>>>>> 7f3f051 (Update _config.yml)
