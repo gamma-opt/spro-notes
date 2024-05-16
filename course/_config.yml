@@ -47,6 +47,9 @@ sphinx:
         packages:
           "[+]": ["textmacros"]     # For ~ to work as non-breaking space
         # If you add something, you should probably add to latex_elements below as well
+        packages:
+          "[+]": ["textmacros"]     # For ~ to work as non-breaking space
+        # If you add something, you should probably add to latex_elements below as well
         macros:
           "reals": "\\mathbb{R}"
           "integers": "\\mathbb{Z}"
