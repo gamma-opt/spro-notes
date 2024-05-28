@@ -13,6 +13,7 @@ kernelspec:
   name: julia-1.10
 ---
 
+(section:the_farmers_problem)=
 # The farmer's problem
 
 We start with the classic example from Birge and Louveaux: the farmer's problem. This is perhaps the most classical example used to discuss the notion of recourse and the interplay between information and decision. Before formalising all these concepts, let's have a close look at the example itself.
