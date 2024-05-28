@@ -60,3 +60,70 @@ The expected value of perfect information (EVPI) is calculated as
  EVPI = z - z^{\text{WS}}.
 ```
 
+````{prf:example} The farmer's problem EVPI
+
+For the farmers problem, we have that $z = -108,390$, and that 
+
+1. For $s=1$, $z^{\text{EV}}_1 = \mini_x \braces{F(x,1)} = -59,950$ (the -20% yield scenario),
+2. for $s=2$, $z^{\text{EV}}_2 = \mini_x \braces{F(x,2)} = -118,600$ (the average yield scenario), and
+3. for $s=3$, $z^{\text{EV}}_3 = \mini_x \braces{F(x,3)} = -167,667$ (the +20% yield scenario).
+
+Therefore, we have that 
+```{math}
+z^{\text{EV}} = \frac{1}{3} z^{\text{EV}}_1 + \frac{1}{3} z^{\text{EV}}_2 + \frac{1}{3} z^{\text{EV}}_3 \approx \$115,406
+```
+
+making $EVPI = -108,390 - (-115,406) = \$7016$. 
+````
+
+## Value of the stochastic solution (VSS)
+
+Another way of quantifying th quality of the solution obtained from a 2SSP model is to compare it against the expected performance of a (first-stage) solution obtained considering a single reference scenario. Typically, this reference scenario is set to be the average value of the uncertain parameter.
+
+Let $\overline{\xi}$ be such a realisation (or scenario). Then, let
+
+```{math}
+  x(\overline{\xi}) = \arg\min F(x, \overline{\xi}).
+```
+
+Notice that $x(\overline{\xi})$ represents the optimal solution obtained when the realisation $\overline{\xi}$ is anticipated. Then, we proceed to calculate the performance of $x(\overline{\xi})$ against all $\xi \in \Xi$, which leads us to
+
+```{math}
+z^{\text{EV}} = \mathbb{E}_\xi\brackets{F(x(\overline{\xi}), \xi)}.
+```
+
+By making $\overline{\xi} = \mathbb{E}\brackets{\xi}$, we obtain the value of the stochastic solution (VSS) by calculating
+```{math}
+VSS = z^{\text{EV}} - z.
+```
+
+%TODO: calculate these values
+````{prf:example} The farmer's problem VSS
+
+For the farmers problem, $\overline{\xi}$ is equivalent to $s=2$, which represented our average yield. Therefore, the solution of the deterministic model is our $x(s=2)$ using the above notation. Then, we have that 
+
+1. For $s=1$, $z^{\text{EV}}_1 = \mini_x \braces{F(x(s=2),1)} = -$ (the -20% yield scenario),
+2. for $s=2$, $z^{\text{EV}}_2 = \mini_x \braces{F(x(s=2),2)} = -$ (the average yield scenario), and
+3. for $s=3$, $z^{\text{EV}}_3 = \mini_x \braces{F(x(s=2),3)} = -$ (the +20% yield scenario).
+
+Therefore, we have that 
+```{math}
+z^{\text{EV}} = \frac{1}{3} z^{\text{EV}}_1 + \frac{1}{3} z^{\text{EV}}_2 + \frac{1}{3} z^{\text{EV}}_3 \approx \$-107,240
+```
+
+making $EVPI = -107,240 - (-108,390) = \$1150$. 
+````
+
+## Comparing VSS and EVPI
+
+In possession with both indicators, we can use then to position how well our stochastic model is performing against two extremes: being completely ignoring the uncertaitny and optimising against expected values (VSS) and optimising with perfect information or foresight (VSS). In other words, assuming minimisation as the reference, we have that
+
+```{math}
+z^{\text{WS}}  \le z\le z^{\text{EV}}
+```
+
+It is not hard to see that this implies that $VSS \ge 0$ and $EVPI \ge 0$. Moreover, if you think of these values as some sort of distance, it is natural to think that you would like your model's objective value $z$ to be as further away as possible from the $z^{\text{EV}}$, thus preferring *higher* values of VSS. Likewise, we would like to be as close as possible to $z^{\text{WS}}$, and thus prefer *lower* values of $EVPI$.
+
+```{warning}
+Although these metrics are useful, they must be interpreted with some caution. For example, if one is relying on scenarios $s \in S$ that are an approximation of a random variable $\xi \in \Xi$, the metric will be dependent on that representation. that being the case, they must ideally be evaluated in a different set of scenarios than $S$as well. These ideas will be discussed further in later sections.
+```

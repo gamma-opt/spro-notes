@@ -84,6 +84,7 @@ There are two complicating factors that prevent the solution of {eq}`eq_2SSP`:
 The standard way to address both issues in stochastic programming is to rely on the notion of *discretisation*. That is, we assume that $\Xi$ is a finite and discrete support. This essentially means that we assume that $\Xi$ can be characterised by the set $S = \braces{1, \dots, |\Xi|}$, where each $s \in S$ is called a scenarios. 
 
 ```{admonition} How to generate scenarios
+:class: tip
 Two main ideas: 
 
 1. assuming that the random variable $\xi$ can be characterised by a discrete set of realisations $\xi_s$, $s \in S$, each with probability $P_s$;
@@ -132,10 +133,9 @@ Thus, we had that $Q(x,\xi) \equiv Q_s(x)$ was given by
 
 ```{math}
 \begin{aligned}
-   Q_s(x) = \mini \ &238y_1(s) -170w_1(s) + 210y_2(s) - 150w_2(s) \\
-   & \quad -36w_3(s) -10w_4(s) \\
-   \st   \ & \alert{t_1(s)}x_1 + y_1(s) - w_1(s) \geq 200 \\
-   & \alert{t_2(s)}x_2 + y_2(s) - w_2(s) \geq 240 \\
+   Q_s(x) = \mini \ &238y_1(s) -170w_1(s) + 210y_2(s) - 150w_2(s) - 36w_3(s) - 10w_4(s) \\
+   \st   \ &t_1(s)x_1 + y_1(s) - w_1(s) \geq 200 \\
+   & t_2(s)x_2 + y_2(s) - w_2(s) \geq 240 \\
    & w_3(s) + w_4(s) \leq \alert{t_3(s)}x_3 \\
    & w_3(s) \leq 6000 \\
    & y_1(s), w_1(s), y_2(s), w_2(s), w_3(s), w_4(s) \geq 0. 
