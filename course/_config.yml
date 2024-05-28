@@ -50,10 +50,6 @@ sphinx:
         # If you add something, you should probably add to latex_elements below as well
         macros:
           "reals": "\\mathbb{R}"
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 252b60e (More TeX macros)
           "integers": "\\mathbb{Z}"
           "symm": "\\mathbb{S}"
           "rank": "\\mathop{\\bf rank}"
@@ -116,8 +112,3 @@ sphinx:
         \newcommand{\brackets}[1]{\left[ #1 \right]}
         \newcommand{\floor}[1]{\lfloor #1 \rfloor}
         \newcommand{\ceil}[1]{\lceil #1 \rceil}
-<<<<<<< HEAD
-=======
->>>>>>> 7f3f051 (Update _config.yml)
-=======
->>>>>>> 252b60e (More TeX macros)
