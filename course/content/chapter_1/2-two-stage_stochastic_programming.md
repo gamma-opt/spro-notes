@@ -44,9 +44,7 @@ where $\mathcal{Q}(x) = \mathbb{E}_\xi\brackets{Q(x, \xi)}$ and
 
 ```{math}
 :label: eq_2stage
-\begin{equation} 
   Q(x, \xi) = \braces{\mini q(\xi)^\top y : W(\xi)y = h(\xi) - T(\xi)x, \ y \ge 0}.
-\end{equation}
 ```
 Let us take a moment to appreciate the structure of {eq}`eq_2SSP_2parts`. First notice how it has two optimisation problems nested within each other. It considers a set of decisions $x$ and associated constraint set $X = \braces{x : Ax = b, x \ge 0}$ that are made with the intention of also minimising the value of $\mathcal{Q}(x)$, which is in itself an expected value among multiple optimisation problems. In turn, $\mathcal{Q}(x)$ is an optimisation problem where, given the decision $x$ and a value for $\xi$, we optimise $Q(x,\xi)$.
 
@@ -61,12 +59,12 @@ We can combine {eq}`eq_2SSP` and {eq}`eq_2stage` into a single optimisation prob
 
 ```{math}
 :label: eq_2SSP
-\begin{align}
+\begin{aligned}
   \mini  & c^\top x + \mathbb{E}_\xi\brackets{Q(x, \xi)} \\
   \st & Ax = b, \ x \ge 0 \\
   & T(\xi)x + W(\xi)y(\xi) = h(\xi), \ \forall \xi \in \Xi \\
   & y(\xi) \ge 0, \ \forall \xi \in \Xi.
-\end{align}
+\end{aligned}
 ```
 
 ```{admonition} (Semi-)infinite programming problems
