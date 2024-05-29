@@ -62,7 +62,7 @@ The expected value of perfect information (EVPI) is calculated as
 
 ````{prf:example} The farmer's problem EVPI
 
-For the farmers problem, we have that $z = -108,390$, and that 
+For the farmers problem (see {ref}`section:the_farmers_problem`), we have that $z = -108,390$, and that 
 
 1. For $s=1$, $z^{\text{EV}}_1 = \mini_x \braces{F(x,1)} = -59,950$ (the -20% yield scenario),
 2. for $s=2$, $z^{\text{EV}}_2 = \mini_x \braces{F(x,2)} = -118,600$ (the average yield scenario), and
