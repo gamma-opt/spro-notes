@@ -26,7 +26,7 @@ Having multiple stages in an stochastic programming model allows for realistical
 
 From the diagram above, one key feature regarding multi-stage stochastic programming (MSSP) problems becomes evident: they are essentially *nested* 2SSPs. This observation paves the way for these to be tackled from two distinct point of views:
 
-1. They can be posed from the perspective of *recurrence*, which allows for a bridge to dynamic programming  to be made; alternatively
+1. They can be posed from the perspective of *recurrence*, which allows for a bridge to [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) to be made; alternatively
 2. they can be posed as deterministic equivalent problems and solved as "monolithic" *(large-scale) mathematical programming* models.
 
 Essentially, both perspectives are equivalent. Considering dynamic programming as a framework for solving MSSP problems allows us to adapt the techniques used for solving dynamic programming problems to solve MSSPs.
@@ -50,9 +50,9 @@ x^1 \rightarrow \xi^2 \rightarrow x^2(\xi^2,x^1) \rightarrow \xi^3 \rightarrow x
 \end{aligned}
 ```
 
-One can see how the gradual dependencies between past decision and past realisation unveil as one progresses in the decision process. Also, it become clear how much more involved the problem becomes, as one must make sure that these dependecies (nonanticipativities) are correctly reflected.
+One can see how the gradual dependencies between past decision and past realisation unveil as one progresses in the decision process. Also, it become clear how much more involved the problem becomes, as one must make sure that these dependencies (nonanticipativity conditions) are correctly reflected.
 
-Accurately modelling this gradual uncertaitny realisation is critically important in settings where decisions must be made frequently and having a model that can inadvertedly anticipate the future can lead to over optimisitc performances. Classical examples of such settings are inventory control problems, hydropower generation scheduling and portfolio asset management. In all of these, nonanticipativity plays a crucial role in defining optimal decisions, and as such, must be modelled as precisely as possible.
+Accurately modelling this gradual uncertainty realisation is critically important in settings where decisions must be made frequently and having a model that can inadvertently anticipate the future can lead to over optimistic performances. Classical examples of such settings are inventory control problems, hydropower generation scheduling and portfolio asset management. In all of these, nonanticipativity plays a crucial role in defining optimal decisions, and as such, must be modelled as precisely as possible.
 %TODO: Add references
 
 %TODO: include a discussion of 2-stage approximation and rolling horizon approaches
@@ -99,7 +99,7 @@ And finally, we are interested in solving
 
 ## Deterministic equivalent of MSSPs
 
-Equivalently, one can pose these models as monolith formulations, which can be directly fed to, e.g., a mathematical programming solver. For illustration purposes, let us consider a 3-stage stochastic programming problem. Then, the determinisitc equivalent can be written as
+Equivalently, one can pose these models as monolith formulations, which can be directly fed to, e.g., a mathematical programming solver. For illustration purposes, let us consider a 3-stage stochastic programming problem. Then, the deterministic equivalent can be written as
 
 ```{math}
 \begin{aligned}
@@ -111,6 +111,6 @@ Equivalently, one can pose these models as monolith formulations, which can be d
    &x^2(\xi^2_s) \ge 0, \ \forall \xi^2_s \\
    &x^3(\xi^3_s | \xi^2_s) \ge 0, \ \forall \xi^2_s, \xi^3_s|\xi^2_s.
 \end{aligned}
-``` 
+```
 
 %TODO: Develop this to include more on the structure of the problem. Let's also use Conejo's book to discuss nested v. explicit formulations, and add a discussion on nonanticipativity conditions.

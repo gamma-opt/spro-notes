@@ -4,20 +4,18 @@
 format: jb-book
 root: intro
 parts:
-- caption: 'Stochastic programming: part 1'
+- caption: 'Introduction to stochastic programming'
   numbered: true
   chapters:
-  - file: content/chapter_1/1-introduction.md
+  - file: content/chapter_1/1-the_farmers_problem.md
   - file: content/chapter_1/2-two-stage_stochastic_programming.md
   - file: content/chapter_1/3-EVPI_and_VSS.md
   - file: content/chapter_1/4-recourse_types.md
   - file: content/chapter_1/5-multi-stage_problems.md  
-# - caption: 'Stochastic programming: part 2'
-#   chapters:
-#   - file: content/markdown_and_sphinx
-#   - file: content/math_and_code
-#   - file: content/interactivity
-#   - file: content/makie
+- caption: 'Uncertainty representation in stochastic programming'
+  numbered: true
+  chapters: 
+  - file: content/chapter_2/1-scenario_trees.md
 # - caption: 'Chance constraints and risk measures'
 #   chapters:
 #   - file: other/about
