@@ -29,9 +29,7 @@ Specifically, leet $x$ be our first-stage decision and $\xi \in \Xi$ our random 
 where $X = \braces{x : Ax = b, x \ge 0 }$ and $\mathcal{Q}(x) = \mathbb{E}_\xi\brackets{Q(x, \xi)}$. The second-stage, that is, *recourse problem*, is defined as
 
 ```{math}
-\begin{equation} 
-  Q(x, \xi) = \mini_y \braces{q(\xi)^\top y : W(\xi)y = h(\xi) - T(\xi)x, \ y \ge 0}.
-\end{equation}
+Q(x, \xi) = \mini_y \braces{q(\xi)^\top y : W(\xi)y = h(\xi) - T(\xi)x, \ y \ge 0}.
 ```
 
 ## Fixed recourse
@@ -39,7 +37,7 @@ where $X = \braces{x : Ax = b, x \ge 0 }$ and $\mathcal{Q}(x) = \mathbb{E}_\xi\b
 We say that the problem has a *fixed recourse* if the coefficients associated with the recourse variables $y$ do are not uncertain, i.e., are not dependent on $\xi$. Thus, if $Q(x, \xi)$ is of fixed recourse, it has the form
 
 ```{math}
-  Q(x, \xi) = \mini_y \braces{q(\xi)^\top y : Wy = h(\xi) - T(\xi)x, \ y \ge 0}.
+Q(x, \xi) = \mini_y \braces{q(\xi)^\top y : Wy = h(\xi) - T(\xi)x, \ y \ge 0}.
 ```
 
 which is equivalent to say that $W(\xi) = W, \forall \xi \in \Xi$.
@@ -49,7 +47,7 @@ which is equivalent to say that $W(\xi) = W, \forall \xi \in \Xi$.
 As a special case of having fixed recourse, a problem is said to be have simple recourse if $W(\xi) = I$. This fact has important implications in some settings, since it reduces the feasibility condition to of the second-stage problem to
 
 ```{math}
-  y = h(\xi) - T(\xi)x
+y = h(\xi) - T(\xi)x
 ```
 
 Notice that this essentially means that each component of the variable vector $y$ has its value fully determined once $x$ is fixed, meaning that evaluating $Q(x, \xi)$ does not require solving an optimisation problem as before. 

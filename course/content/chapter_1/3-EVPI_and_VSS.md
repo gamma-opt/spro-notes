@@ -21,17 +21,13 @@ First, let us define a more compact notation, which will help us to precisely de
 
 ```{math}
 :label: eq:2SSP_compact
-\begin{equation}
   z = \mini_x \braces{\mathbb{E}_\xi\brackets{F(x,\xi)}},
-\end{equation}
 ```
 
 where $F(x,\xi) = \braces{c^\top x + \mathbb{E}_\xi\brackets{Q(x,\xi)} : x \in X}$, $Q(x,\xi)$ is, as before, defined as
 
 ```{math}
-\begin{equation} 
-  Q(x, \xi) = \braces{\mini q(\xi)^\top y : W(\xi)y = h(\xi) - T(\xi)x, \ y \ge 0}.
-\end{equation}
+Q(x, \xi) = \braces{\mini q(\xi)^\top y : W(\xi)y = h(\xi) - T(\xi)x, \ y \ge 0}.
 ```
 
 and $X=\braces{x \in \reals^n : Ax = b, x \ge 0}$.
@@ -47,9 +43,7 @@ A WS solution is essentially the best outcome achievable, as it is based on perf
 A WS solution can be obtained from a perfect-foresight version of {eq}`eq:2SSP_compact`, which is defined as
 
 ```{math}
-\begin{equation*}
 	z^{\text{WS}} = \mathbb{E}_\xi\brackets{\mini_x \braces{F(x,\xi)}} = \mathbb{E}_\xi\brackets{F(x(\xi), \xi)},
-\end{equation*}
 ```
 
 where $x(\xi) = \arg\min_x \braces{F(x, \xi)}$. In other words, $z^{\text{WS}}$ is the expected value of the objective function value if we could perfectly adapt our solution to the scenario we can predict that will happen. Notice that we cannot control *which* scenario will happen, and as such, our return, albeit based on perfect foresight, is uncertain.
