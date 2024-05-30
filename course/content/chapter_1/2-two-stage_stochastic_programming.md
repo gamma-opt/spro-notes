@@ -107,8 +107,8 @@ Assuming that we are given a set of realisations (or scenarios) $\xi_s$, $\foral
 With that scenario-based representation of the uncertainty, we are ready to state the so-called *deterministic equivalent* formulation of {eq}`eq_2SSP`, which is given by
 
 ```{math}
-\begin{aligned}
 :label: 2SSP
+\begin{aligned}
    \mini & c^\top x + \sum_{s\in S} P_s q_s^\top y_s \\
    \st & Ax = b, \ x \ge 0 \\
    & T_sx + W_s y_s = h_s, \ \forall s \in S \\
@@ -134,7 +134,7 @@ Thus, we had that $Q(x,\xi) \equiv Q_s(x)$ was given by
    Q_s(x) = \mini \ &238y_1(s) -170w_1(s) + 210y_2(s) - 150w_2(s) - 36w_3(s) - 10w_4(s) \\
    \st   \ &t_1(s)x_1 + y_1(s) - w_1(s) \geq 200 \\
    & t_2(s)x_2 + y_2(s) - w_2(s) \geq 240 \\
-   & w_3(s) + w_4(s) \leq \alert{t_3(s)}x_3 \\
+   & w_3(s) + w_4(s) \leq t_3(s)x_3 \\
    & w_3(s) \leq 6000 \\
    & y_1(s), w_1(s), y_2(s), w_2(s), w_3(s), w_4(s) \geq 0. 
 \end{aligned}

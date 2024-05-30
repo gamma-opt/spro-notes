@@ -5,7 +5,7 @@ format: jb-book
 root: intro
 parts:
 - caption: 'Stochastic programming: part 1'
-  numbering: true
+  numbered: true
   chapters:
   - file: content/chapter_1/1-introduction.md
   - file: content/chapter_1/2-two-stage_stochastic_programming.md
