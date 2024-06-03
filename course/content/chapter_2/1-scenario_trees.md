@@ -22,8 +22,12 @@ Let us define $\xi = (\xi^t)_{t \in [H]}$, where $[H] = \braces{1,\dots,H}$ and 
 
 A *scenario* is denoted $(\xi_sˆt)_{t \in [H]}$, forming a *path* through $\xi$. Thus, we can think of the scenario tree $\xi$ as being a set of paths, i.e., $\xi = \braces{\xi_s}_{s \in [S]}$ where $S$ is the number of scenarios.
 
-%TODO: Diagram/ figure with scenario tree
+```{figure} ../figures/scenario_tree.svg
+:name: scenario_tree
+:align: center
 
+A schematic representation of a scenario tree
+```
 
 ## Taxonomy of scenario trees
 
@@ -48,6 +52,7 @@ This relates with the discussion about the need for MSSPs in {ref}`sec:MSSP`. Fa
 
 A scenario tree is essentially a discrete approximation of a (typically continuous) stochastic process. As such, there are decisions that must be made that influence how well the scenario tree approximates the original stochastic process.
 
+(scenario_tree_shape)=
 ### Scenario tree shape
 
 Two key parameters govern the geometry of a scenario tree:
@@ -57,7 +62,7 @@ Two key parameters govern the geometry of a scenario tree:
 
 The decision on the *number of stages* $H$ must reflect the need for adaptability to revealed information, which is connected to the representation of how gradually the uncertainty is revealed. On the other hand, the number of scenarios $S$ convey a more precise description of the uncertainty, and, in general, the more the better.
 
-The relationship between the two influence the total number of scenarios the model will have. In particular, the number of scenarios will $O(N^H)$, where $|\xi_t| \le N$ for $t \in [H]$. This quantity is critical to be kept in mind, as the more scenarios the stochastic programming model has, the more computationally challenging it will be. Indeed, most scenario generation methods seek to find scenario trees with minimal $|\x|$ such that *representation quality* requirements are observed. 
+The relationship between the two influence the total number of scenarios the model will have. In particular, the number of scenarios will $O(N^H)$, where $|\xi_t| \le N$ for $t \in [H]$. This quantity is critical to be kept in mind, as the more scenarios the stochastic programming model has, the more computationally challenging it will be. Indeed, most scenario generation methods seek to find scenario trees with minimal $|\xi|$ such that *representation quality* requirements are observed. 
 
 ### Data source
 
