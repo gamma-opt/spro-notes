@@ -16,7 +16,7 @@ kernelspec:
 (section:the_farmers_problem)=
 # The farmer's problem
 
-We start with the classic example from Birge and Louveaux: the farmer's problem. This is perhaps the most classical example used to discuss the notion of recourse and the interplay between information and decision. Before formalising all these concepts, let's have a close look at the example itself.
+We start with the classic example from {cite}`birge2011introduction`: the farmer's problem. This is perhaps the most classical example used to discuss the notion of recourse and the interplay between information and decision. Before formalising all these concepts, let's have a close look at the example itself.
 
 ## The deterministic farmers problem
 
@@ -113,7 +113,7 @@ Let us now consider the other scenario, in which the yields are instead 20% lowe
 
 The results in {numref}`farmers_optimal_20-` show that in this case, our optimal strategy changes in some way. Essentially, we are still following steps 1-3, but we never really reach step 3, as we are left with not enough land to satisfy our cattle feed constraints. As corn is cheaper to buy than wheat, we focus on fulfilling the need for wheat and plant the reminder of the land with corn, complementing it with an amount of 180 tons from the market.
 
-## Considering multiple sceanrios at once
+## Considering multiple scenarios at once
 
 Although we can extract a logic on how to proceed, one may notice that our strategy has a fundamental flaw: it depends on *knowing what would be the yields* so we can plan the exact amount of acres that will yield 6000 tons of sugar beets. Clearly, it the yields are truly uncertain, we must design a strategy that can perform well *regardless* of the observed yield.
 
@@ -184,3 +184,9 @@ Moreover, the farmer's land allocation decisions are such that they are *hedging
 Effectively, this encoding of the dynamics between decision-making and uncertainty observations is the one of the main focus of *stochastic programming*, i.e., how to incorporate within the model the notion of sequential decisions which are made prior or after information about the uncertainty becomes available.
 
 %TODO: Include diagram with the farmers's first and second stge decisions.
+
+
+## References
+
+```{bibliography}
+```
