@@ -12,7 +12,7 @@ kernelspec:
   language: julia
   name: julia-1.10
 ---
-
+(sec:MSSP)=
 # Multi-stage stochastic programming (MSSP) problems
 
 Now that we have clear understanding of the structure of two-stage stochastic programming problems, we can generalise the idea for an arbitrary number of stages. 
