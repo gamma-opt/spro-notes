@@ -184,9 +184,3 @@ Moreover, the farmer's land allocation decisions are such that they are *hedging
 Effectively, this encoding of the dynamics between decision-making and uncertainty observations is the one of the main focus of *stochastic programming*, i.e., how to incorporate within the model the notion of sequential decisions which are made prior or after information about the uncertainty becomes available.
 
 %TODO: Include diagram with the farmers's first and second stge decisions.
-
-
-## References
-
-```{bibliography}
-```

@@ -2,4 +2,5 @@ course/.ipynb_checkpoints
 course/_build
 Manifest.toml
 .DS_Store
+.texpadtmp
 

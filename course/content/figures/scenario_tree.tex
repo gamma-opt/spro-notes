@@ -1,12 +1,10 @@
-\documentclass{article}
+\documentclass[dvisvgm]{minimal}
 
 \usepackage{import}
 \import{}{figure_layout.tex}
 
-%\setlength\PreviewBorder{2mm} % use to add a border around the image
-
 \begin{document}
-\begin{preview}
+\scalebox{1.2}{
 	\begin{tikzpicture}[
 	                   grow = right,
 	edge from parent/.style = {draw,->},
@@ -46,5 +44,5 @@
 		 \draw[->, thick] (stages) -- (7,-2.5);
 		 \draw[->, thick] (stages) -- (10.5,-2.5);
 	\end{tikzpicture}
-\end{preview}
+	}
 \end{document}

@@ -116,6 +116,11 @@ With that scenario-based representation of the uncertainty, we are ready to stat
 \end{aligned}
 ```
 
+```{admonition} Linearity assumption in stochastic programming
+:class: note
+Throughout our developments, we have an underlying assumption of linearity in our stochastic programming models. Clearly, that does not need to be the case, and is as such to simplify the presentation. 
+```
+
 Notice how the assumption of having a discrete set of scenarios immediately solve the two issues discussed above, that is:
 
 1. the expected value becomes a weighted sum, which is trivial to evaluate. In other words, being $P_s$ the probability associated with scenario $s$ ($P_s = P(\xi = \xi_s)$), we have that $\mathbb{E}_\xi\brackets{Q(x, \xi)} = \sum_{s\in S} P_s q_s^\top y_s$.
