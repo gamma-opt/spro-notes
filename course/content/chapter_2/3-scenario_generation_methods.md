@@ -74,6 +74,7 @@ One alternative type of clustering methods is that proposed in {cite}`lohndorf20
 ```{figure} ../figures/lohndorf2016.svg
 :name: lohndorf2016
 :align: center
+:scale: 120%
 
 Comparison of alternative scenario generation methods (source: {cite}`lohndorf2016empirical`)
 ```
@@ -108,11 +109,12 @@ Both alternative eventually yield a reduced scenario tree. As a general rule, fo
 
 Scenario reduction has shown to provide positive results as a "out-of-the-box" method for generating scenarios for stochastic programming problems, with very positive results. For example, in {cite}`heitsch2003scenario` the authors show that with tree comprising 50% of the scenarios presented 90% accuracy whilst 1% of the scenarios was already responsible for 50% of accuracy. In addition, the implementation Scenred2 available in GAMS, with interfaces for Python and Julia, has played a prominent role in its popularisation.
 
-{numref}}`scenred` illustrates the results reported in {cite}`oliveira2016framework`, where the authors utilised scenario reduction to generate scenario trees from initial scenario samples of varied sizes. In that, one can see how the number of initial samples ($|\xi^1|$) affect how close the generated tree ($K$ is represented by the shades of blue), while also showing the diminishing benefits of increasing $K$.
+{numref}`scenred` illustrates the results reported in {cite}`oliveira2016framework`, where the authors utilised scenario reduction to generate scenario trees from initial scenario samples of varied sizes. In that, one can see how the number of initial samples ($|\xi^1|$) affect how close the generated tree ($K$ is represented by the shades of blue), while also showing the diminishing benefits of increasing $K$.
 
 ```{figure} ../figures/scenred.svg
 :name: scenred
 :align: center
+:scale: 120%
 
 Numerical results showing the performance of scenario reduction (source {cite}`oliveira2016framework`)
 ```
@@ -124,16 +126,15 @@ There is no universal scenario generation method that is accepted as the best pe
 In {cite}`kaut2021scenario` show that scenario reduction is the best performing method while moment matching is a closely following option. In contrast, {cite}`fernandez2018optimizing` compare scenario reduction with a quasi-Monte Carlo strategy, and find the former to perform better than the latter.
 
 ```{figure} ../figures/stdev_cost_in.svg
-:name: scenred
+:name: stdev_cost_in
 :align: center
 :scale: 150%
 ```
+
 ```{figure} ../figures/stdev_cost_out.svg
-:name: scenred
+:name: stdev_cost_out
 :align: center
 :scale: 150%
 
 In- (top) and out-of-sample (bottom) evaluation for three distinct scenario generation methods (source: {cite}`fernandez2018optimizing`)
 ```
-
-
