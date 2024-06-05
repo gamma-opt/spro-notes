@@ -24,6 +24,7 @@ classDef default fill:white, stroke:black, stroke-width:2px;
 
 As such, one common saying related to stochastic programming model is "garbage in equals garbage out". This refers to the fact that, having a sophisticated stochastic programming model, perhaps including many of the features we will discuss in the next chapters, is not enough for one to have a reliable model for analyses. One must, just as carefully, consider whether the quality of the uncertainty representation, as they majorly influence the quality of the solutions obtained. 
 
+(error_and_stability)=
 ## Error and stability of scenario trees
 
 We are interesting in understanding how scenario trees, being an approximation of the stochastic process that in being represented in our stochastic programming model, affect the solutions we obtain from it. There are two measures that one must consider for this purpose:
