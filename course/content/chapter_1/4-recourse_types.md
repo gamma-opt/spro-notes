@@ -1,18 +1,3 @@
----
-jupytext:
-  cell_metadata_filter: -all
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.16.1
-kernelspec:
-  display_name: Julia 1.10.3
-  language: julia
-  name: julia-1.10
----
-
 # Types of recourse
 
 When we consider the nature of the second-stage problem, we notice that they might have particular structural features which may be used to our benefit or help us infer properties that will aid with, for example, designing specilised solution algorithms.

@@ -6,9 +6,9 @@ The method was first analysed in the context of stochastic programming models in
 
 When employing SAA, we are taking an alternative approach in which, instead of solving one single problem considering $|\xi|$ scenarios (or $\eta$, assuming $\eta$ discrete and finite), we solve multiple $M$ problems, each with scenario trees of size $N << |\xi|$.
 
-```{figure} ../figures/SAA-scheme.svg
+```{figure} ../figures/SAA-scheme.drawio.svg
 :align: center
-:scale: 200%
+:scale: 100%
 
 Schematic representation of SAA
 ```
