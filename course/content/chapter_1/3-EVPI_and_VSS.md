@@ -1,18 +1,3 @@
----
-jupytext:
-  cell_metadata_filter: -all
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.16.1
-kernelspec:
-  display_name: Julia 1.10.3
-  language: julia
-  name: julia-1.10
----
-
 # Measuring the quality of 2SSP solutions
 
 There are two well-established metrics that can be used to measure average performance gains reaped from employment of stochastic programming models. These are useful in that they allow one to measure whether dealing with a much more sophisticated, computationally demanding model is worth in terms of added value to the decision process.
