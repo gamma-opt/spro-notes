@@ -24,6 +24,6 @@ parts:
   - file:  content/chapter_3/1-risk_modelling.md
 # - caption: 'Robust optimisation'
 # - caption: 'Decomposition methods'
-- caption: 'Bibliography'
+- caption: ' '
   chapters:
   - file: content/bibliography.md
