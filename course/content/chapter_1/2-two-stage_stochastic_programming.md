@@ -2,9 +2,9 @@
 
 ## What is a two-stage stochastic programming (2SSP) model?
 
-Let us define more formally the structure behind the farmer's problem decision making. That is, let
+Let us define more formally the structure behind the farmer's problem decision-making. That is, let
 
-- $x$ represent the *first-stage* decisions, i.e., those that are made before the uncertainty is revealed and as such, cannot be scenario dependent;
+- $x$ represent the *first-stage* decisions, i.e., those that are made before the uncertainty is revealed and as such, cannot be scenario-dependent;
 - $y$ be the *second-stage* decisions, which have a *corrective* nature to them. These are our recourse decisions;
 - $\xi \in \Xi$ represent the random variable with support $\Xi$;
 - $\brackets{q(\xi), T(\xi), W(\xi), h(\xi)}$ be the random vector containing all the data that is dependent on the random variable $\xi$.
@@ -31,7 +31,7 @@ where $\mathcal{Q}(x) = \mathbb{E}_\xi\brackets{Q(x, \xi)}$ and
 :label: eq_2stage
   Q(x, \xi) = \braces{\mini q(\xi)^\top y : W(\xi)y = h(\xi) - T(\xi)x, \ y \ge 0}.
 ```
-Let us take a moment to appreciate the structure of {eq}`eq_2SSP_2parts`. First notice how it has two optimisation problems nested within each other. It considers a set of decisions $x$ and associated constraint set $X = \braces{x : Ax = b, x \ge 0}$ that are made with the intention of also minimising the value of $\mathcal{Q}(x)$, which is in itself an expected value among multiple optimisation problems. In turn, $\mathcal{Q}(x)$ is an optimisation problem where, given the decision $x$ and a value for $\xi$, we optimise $Q(x,\xi)$.
+Let us take a moment to appreciate the structure of {eq}`eq_2SSP_2parts`. First notice how it has two optimisation problems nested within each other. It considers a set of decisions $x$ and associated constraint set $X = \braces{x : Ax = b, x \ge 0}$ that are made to also minimise the value of $\mathcal{Q}(x)$, which is in itself an expected value among multiple optimisation problems. In turn, $\mathcal{Q}(x)$ is an optimisation problem where, given the decision $x$ and a value for $\xi$, we optimise $Q(x,\xi)$.
 
 In essence, this structure encodes the following decision process
 ```{math}
@@ -54,7 +54,7 @@ We can combine {eq}`eq_2SSP` and {eq}`eq_2stage` into a single optimisation prob
 
 ```{admonition} (Semi-)infinite programming problems
 :class: note
-Problems that have a infinite number of variables or constraints. If the problems has either one, but not both, it becomes a semi-infinite programming problem.
+Problems that have an infinite number of variables or constraints. If the problem has either one, but not both, it becomes a semi-infinite programming problem.
 ```
 
 ## Tractable 2SSPs
@@ -64,7 +64,7 @@ There are two complicating factors that prevent the solution of {eq}`eq_2SSP`:
 1. The evaluation of $\mathbb{E}_\xi\brackets{Q(x, \xi)}$, which requires calculating an $n$-dimensional integral, assuming $x \in \reals^n$;
 2. Dealing with an infinite programming problem, as $\forall \xi \in \Xi$ spans an infinite number of variables and constraints.
 
-The standard way to address both issues in stochastic programming is to rely on the notion of *discretisation*. That is, we assume that $\Xi$ is a finite and discrete support. This essentially means that we assume that $\Xi$ can be characterised by the set $S = \braces{1, \dots, |\Xi|}$, where each $s \in S$ is called a scenarios. 
+The standard way to address both issues in stochastic programming is to rely on the notion of *discretisation*. That is, we assume that $\Xi$ is a finite and discrete support. This essentially means that we assume that $\Xi$ can be characterised by the set $S = \braces{1, \dots, |\Xi|}$, where each $s \in S$ is called a scenario. 
 
 ```{admonition} How to generate scenarios
 :class: tip
@@ -73,7 +73,7 @@ Two main ideas:
 1. assuming that the random variable $\xi$ can be characterised by a discrete set of realisations $\xi_s$, $s \in S$, each with probability $P_s$;
 2. assuming that $\xi \in \Xi$ can be sampled via, e.g., Monte Carlo sampling.
 
-Both ideas will be discussed in more details in the later sections.
+Both ideas will be discussed in more detail in the later sections.
 ```
 %TODO: Add refernce to scenario generation lecture
 
@@ -103,16 +103,16 @@ With that scenario-based representation of the uncertainty, we are ready to stat
 
 ```{admonition} Linearity assumption in stochastic programming
 :class: note
-Throughout our developments, we have an underlying assumption of linearity in our stochastic programming models. Clearly, that does not need to be the case, and is as such to simplify the presentation. 
+Throughout our developments, we have an underlying assumption of linearity in our stochastic programming models. Clearly, that does not need to be the case and is as such to simplify the presentation. 
 ```
 
-Notice how the assumption of having a discrete set of scenarios immediately solve the two issues discussed above, that is:
+Notice how the assumption of having a discrete set of scenarios immediately solves the two issues discussed above, that is:
 
 1. the expected value becomes a weighted sum, which is trivial to evaluate. In other words, being $P_s$ the probability associated with scenario $s$ ($P_s = P(\xi = \xi_s)$), we have that $\mathbb{E}_\xi\brackets{Q(x, \xi)} = \sum_{s\in S} P_s q_s^\top y_s$.
 2. the number of variables and constraints that depend on $\xi$ are now finite, albeit proportional to $|\Xi|$
 
 ````{prf:example} The farmers problem revisited
-In the farmers problem, we assumed that $S = \braces{1,2,3}$. Also, not all parameters of the model were assumed to be random, i.e., we had that
+In the farmer's problem, we assumed that $S = \braces{1,2,3}$. Also, not all parameters of the model were assumed to be random, i.e., we had that
 
 ```{math}
   T_s = [t_1(s), t_2(2), t_3(s)], \forall s \in S; q_s = q_s', W_s = W_s', \text{ and } h_s = h_s', \forall s,s' \in S : s \ne s'.

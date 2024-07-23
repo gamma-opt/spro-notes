@@ -1,6 +1,6 @@
 # Measuring the quality of 2SSP solutions
 
-There are two well-established metrics that can be used to measure average performance gains reaped from employment of stochastic programming models. These are useful in that they allow one to measure whether dealing with a much more sophisticated, computationally demanding model is worth in terms of added value to the decision process.
+There are two well-established metrics that can be used to measure average performance gains reaped from the employment of stochastic programming models. These are useful in that they allow one to measure whether dealing with a much more sophisticated, computationally demanding model is worth it in terms of added value to the decision process.
 
 First, let us define a more compact notation, which will help us to precisely define said metrics. For that, let our 2SSP be represented as
 
@@ -21,7 +21,7 @@ and $X=\braces{x \in \reals^n : Ax = b, x \ge 0}$.
 
 One way to access the performance of a solution obtained from a 2SSP model is via its comparison against a so-called *wait-and-see* (WS) solution.
 
-A WS solution is essentially the best outcome achievable, as it is based on perfect information regarding how the uncertainty will unveil. Making a parallel to farmer's problem, this would be akin to knowing exactly which of the three scenarios $S = \braces{1: \text{-20\%}, 2: \text{avg.}, 3:\text{+20\%}}$ will become true and choosing the respective optimal land allocation. 
+A WS solution is essentially the best outcome achievable, as it is based on perfect information regarding how the uncertainty will be unveiled. Making a parallel to the farmer's problem, this would be akin to knowing exactly which of the three scenarios $S = \braces{1: \text{-20\%}, 2: \text{avg.}, 3:\text{+20\%}}$ will become true and choosing the respective optimal land allocation. 
 
 %TODO: fix reference to 1-introduction.md
 
@@ -57,7 +57,7 @@ making $EVPI = -108,390 - (-115,406) = \$7016$.
 
 ## Value of the stochastic solution (VSS)
 
-Another way of quantifying th quality of the solution obtained from a 2SSP model is to compare it against the expected performance of a (first-stage) solution obtained considering a single reference scenario. Typically, this reference scenario is set to be the average value of the uncertain parameter.
+Another way of quantifying the quality of the solution obtained from a 2SSP model is to compare it against the expected performance of a (first-stage) solution obtained considering a single reference scenario. Typically, this reference scenario is set to be the average value of the uncertain parameter.
 
 Let $\overline{\xi}$ be such a realisation (or scenario). Then, let
 
@@ -79,7 +79,7 @@ VSS = z^{\text{EV}} - z.
 %TODO: calculate these values
 ````{prf:example} The farmer's problem VSS
 
-For the farmers problem, $\overline{\xi}$ is equivalent to $s=2$, which represented our average yield. Therefore, the solution of the deterministic model is our $x(s=2)$ using the above notation. Then, we have that 
+For the farmer's problem, $\overline{\xi}$ is equivalent to $s=2$, which represents our average yield. Therefore, the solution of the deterministic model is our $x(s=2)$ using the above notation. Then, we have that 
 
 1. For $s=1$, $z^{\text{EV}}_1 = \mini_x \braces{F(x(s=2),1)} = -$ (the -20% yield scenario),
 2. for $s=2$, $z^{\text{EV}}_2 = \mini_x \braces{F(x(s=2),2)} = -$ (the average yield scenario), and
@@ -95,14 +95,14 @@ making $EVPI = -107,240 - (-108,390) = \$1150$.
 
 ## Comparing VSS and EVPI
 
-In possession with both indicators, we can use then to position how well our stochastic model is performing against two extremes: being completely ignoring the uncertaitny and optimising against expected values (VSS) and optimising with perfect information or foresight (VSS). In other words, assuming minimisation as the reference, we have that
+In possession of both indicators, we can use them to position how well our stochastic model is performing against two extremes: completely ignoring the uncertainty and optimising against expected values (VSS) and optimising with perfect information or foresight (VSS). In other words, assuming minimisation as the reference, we have that
 
 ```{math}
 z^{\text{WS}}  \le z\le z^{\text{EV}}
 ```
 
-It is not hard to see that this implies that $VSS \ge 0$ and $EVPI \ge 0$. Moreover, if you think of these values as some sort of distance, it is natural to think that you would like your model's objective value $z$ to be as further away as possible from the $z^{\text{EV}}$, thus preferring *higher* values of VSS. Likewise, we would like to be as close as possible to $z^{\text{WS}}$, and thus prefer *lower* values of $EVPI$.
+It is not hard to see that this implies that $VSS \ge 0$ and $EVPI \ge 0$. Moreover, if you think of these values as some sort of distance, it is natural to think that you would like your model's objective value $z$ to be as far away as possible from the $z^{\text{EV}}$, thus preferring *higher* values of VSS. Likewise, we would like to be as close as possible to $z^{\text{WS}}$, and thus prefer *lower* values of $EVPI$.
 
 ```{warning}
-Although these metrics are useful, they must be interpreted with some caution. For example, if one is relying on scenarios $s \in S$ that are an approximation of a random variable $\xi \in \Xi$, the metric will be dependent on that representation. that being the case, they must ideally be evaluated in a different set of scenarios than $S$as well. These ideas will be discussed further in later sections.
+Although these metrics are useful, they must be interpreted with some caution. For example, if one is relying on scenarios $s \in S$ that are an approximation of a random variable $\xi \in \Xi$, the metric will be dependent on that representation. That being the case, they must ideally be evaluated in a different set of scenarios than $S$as well. These ideas will be discussed further in later sections.
 ```

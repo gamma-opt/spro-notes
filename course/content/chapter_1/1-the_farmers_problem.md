@@ -3,9 +3,9 @@
 
 We start with the classic example from {cite}`birge2011introduction`: the farmer's problem. This is perhaps the most classical example used to discuss the notion of recourse and the interplay between information and decision. Before formalising all these concepts, let's have a close look at the example itself.
 
-## The deterministic farmers problem
+## The deterministic farmer's problem
 
-A farmer has 500 acres of land available for raising wheat, corn, and sugar beets. She needs at least 200 tons of wheat and 240 tons of corn for cattle feed. Cattle feed amounts can be raised on the farm or bought from a wholesale market. Sugar beet is raised for profit only. However, production above a 6000 ton quota has a lower sales price.
+A farmer has 500 acres of land for raising wheat, corn, and sugar beets. She needs at least 200 tons of wheat and 240 tons of corn for cattle feed. Cattle feed can be raised on the farm or bought from a wholesale market. Sugar beet is raised for profit only. However, production above a 6000-ton quota has a lower sales price.
 
 ```{table} Farmer's problem data
 :name: farmers_data
@@ -66,7 +66,7 @@ In our context, the terms strategy and policy have the same meaning: a set of in
 
 ## Considering multiple scenarios individually
 
-To illustrate what this means, let us consider that crop yields can fluctuate $\pm$ 20% due to climate related factors such as solar incidence and rainfall. The most natural way to take into consideration such variation is to rely on the notion of *scenarios*, which essentially means solving the problem for different inputs (in this case different crop yields) and seeing how the optimal strategy changes.
+To illustrate this, let us consider that crop yields can fluctuate $\pm$ 20% due to climate-related factors such as solar incidence and rainfall. The most natural way to take into consideration such variation is to rely on the notion of *scenarios*, which essentially means solving the problem for different inputs (in this case different crop yields) and seeing how the optimal strategy changes.
 
 Let us first consider that our yields are 20% higher than the average values listed in {numref}`farmers_data`. Then our optimal decisions become
 
@@ -96,7 +96,7 @@ Let us now consider the other scenario, in which the yields are instead 20% lowe
 | **Overall profit:** |           |          | **$59,950**     |
 ```
 
-The results in {numref}`farmers_optimal_20-` show that in this case, our optimal strategy changes in some way. Essentially, we are still following steps 1-3, but we never really reach step 3, as we are left with not enough land to satisfy our cattle feed constraints. As corn is cheaper to buy than wheat, we focus on fulfilling the need for wheat and plant the reminder of the land with corn, complementing it with an amount of 180 tons from the market.
+The results in {numref}`farmers_optimal_20-` show that in this case, our optimal strategy changes in some way. Essentially, we are still following steps 1-3, but we never really reach step 3, as we are left with not enough land to satisfy our cattle feed constraints. As corn is cheaper to buy than wheat, we focus on fulfilling the need for wheat and plant the remainder of the land with corn, complementing it with an amount of 180 tons from the market.
 
 ## Considering multiple scenarios at once
 
@@ -106,7 +106,7 @@ One way to look at this issue is to consider a long-term perspective. That is, w
 
 1. each year, one of these scenarios will happen;
 2. we assume then to be equally likely to realise, but exactly which will happen we cannot know;
-3. we are interested in maximising the farmer's expected profit, whick is akin to maximising the long-run profit of the farm.
+3. we are interested in maximising the farmer's expected profit, which is akin to maximising the long-run profit of the farm.
 
 To formulate the farmer's problem as such, we must first define a set of yield scenarios $S = \braces{1: \text{-20\%}, 2: \text{avg.}, 3:\text{+20\%}}$. Then, we have to separate the set of variables that must be decided such that their values are the same regardless of the observed scenario and those who can have their value decided once the uncertainty is observed. In our case, the former are the land allocation decisions, while the latter are the purchase and sales decisions. Thus, our decision variables are redefined as
 
@@ -155,14 +155,14 @@ Notice that this model has a few remarkable features. First of all, notice that 
 
 ```{admonition} Non-anticipativity and temporal causality
 :class: note
-In this simple example, having variables that depend on the scenarios imply that they are decided with the knowledge from observing the uncertainty revelation.
+In this simple example, having variables that depend on the scenarios implies that they are decided with the knowledge from observing the uncertainty revelation.
 
-In contrast, variables that do not depend on the scenarios are implicitly decided without knowing which realisation occured. In other words, they cannot anticipate the uncertainty, thus satisfying temporal causality.
+In contrast, variables that do not depend on the scenarios are implicitly decided without knowing which realisation occurred. In other words, they cannot anticipate the uncertainty, thus satisfying temporal causality.
 ```
 
-Moreover, the farmer's land allocation decisions are such that they are *hedging* against the fact that, ultimately, the farmer cannot know which scenario will indeed occur. Naturally, this hedging comes with a "price" that is paid in comparison to the setting where th farmer can perfectly match the land allocation to the crop yields.
+Moreover, the farmer's land allocation decisions are such that they are *hedging* against the fact that, ultimately, the farmer cannot know which scenario will indeed occur. Naturally, this hedging comes with a "price" that is paid in comparison to the setting where the farmer can perfectly match the land allocation to the crop yields.
 
-Effectively, this encoding of the dynamics between decision-making and uncertainty observations is the one of the main focus of *stochastic programming*, i.e., how to incorporate within the model the notion of sequential decisions which are made prior or after information about the uncertainty becomes available.
+Effectively, this encoding of the dynamics between decision-making and uncertainty observations is one of the main focus of *stochastic programming*, i.e., how to incorporate within the model the notion of sequential decisions which are made prior or after information about the uncertainty becomes available.
 
 %TODO: Include diagram with the farmers's first and second stge decisions.
 ```{figure} ../figures/2-stage.svg

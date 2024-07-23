@@ -2,7 +2,7 @@
 
 Sample average approximation (SAA) can be seen as an alternative generating scenario by employing a specialised method. Rather, we utilise Monte Carlo sampling to obtain scenarios. By repeatedly doing so, we can approximate the objective function value associated with the true stochastic process $\eta$.
 
-The method was first analysed in the context of stochastic programming models in {cite}`shapiro1998simulation`, who provided techniques to bound the objective function value by means of Monte Carlo sampling. Since then, it has become a standard approah in the context of practical applications of stochastic programming models, in particular because it is a useful for dealing with problems with too large scenario trees or continuous stochastic processes.
+The method was first analysed in the context of stochastic programming models in {cite}`shapiro1998simulation`, which provided techniques to bound the objective function value by means of Monte Carlo sampling. Since then, it has become a standard approach in the context of practical applications of stochastic programming models, in particular, because it is useful for dealing with problems with too large scenario trees or continuous stochastic processes.
 
 When employing SAA, we are taking an alternative approach in which, instead of solving one single problem considering $|\xi|$ scenarios (or $\eta$, assuming $\eta$ discrete and finite), we solve multiple $M$ problems, each with scenario trees of size $N << |\xi|$.
 
@@ -14,14 +14,14 @@ Schematic representation of SAA
 ```
 
 ```{note}
-The theory of SAA is, albeit more recent, also well developed for MSSPs. We focus on the 2SSP for the simplicity of exposition. 
+The theory of SAA is, albeit more recent, also well-developed for MSSPs. We focus on the 2SSP for the simplicity of exposition. 
 ```
 
 ## How SAA works
 
 SAA is based on the law of large numbers (LLN) and the [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem) (CLT), and as such is based on estimating *bounds* for the objective function value using mean values and associated *confidence intervals*
 
-Let us first define a more compact notation, which will help us in this setting. For that, let us assume that $\xi$ is the scenario tree that we would like to solve our problem with. That is, $\xi$ perfectly describe $\eta$ or is has all possible realisations the uncertainty can attain, but is intractable, motivating the use of SAA. With that in mind, let
+Let us first define a more compact notation, which will help us in this setting. For that, let us assume that $\xi$ is the scenario tree that we would like to solve our problem with. That is, $\xi$ perfectly describes $\eta$ or has all possible realisations the uncertainty can attain, but is intractable, motivating the use of SAA. With that in mind, let
 
 ```{math}
 f(x) = \mathbb{E}_\xi\brackets{F(x, \xi)}
@@ -44,7 +44,7 @@ Let us define as $N$ the number of samples we draw from our original stochastic 
  \hat{z}_N = \min_x \braces{\tilde{f}_N(x) = \frac{1}{N}\sum_{n=1}^N F(x,\xi_n)}.
 ```
 
-A first important point to be made is that $\tilde{f}_N(x)$ is an unbiased estimator for $f(x)$. To see that, it suffices to notice that
+The first important point to be made is that $\tilde{f}_N(x)$ is an unbiased estimator for $f(x)$. To see that, it suffices to notice that
 
 ```{math}
 \mathbb{E}_\xi\brackets{\tilde{f}_N(x)} = \frac{1}{N}\mathbb{E}_\xi\brackets{\sum_{n=1}^N F(x,\xi_n)} \xrightarrow{LLN} \frac{1}{N} (Nf(x)) = f(x).
@@ -53,7 +53,7 @@ A first important point to be made is that $\tilde{f}_N(x)$ is an unbiased estim
 ````{admonition} Law of large numbers (LLN)
 :class: note
 
-The result from the law of large numbers (LLN) we are using is that, for a i.i.d random variable $X$ with mean value $\overline{X}$, we have that  
+The result from the law of large numbers (LLN) we are using is that, for an i.i.d random variable $X$ with mean value $\overline{X}$, we have that  
 ```{math}
 \lim_{N \rightarrow \infty} \mathbb{E}\brackets{\frac{\sum_{n=1}^N X_n}{N}} = \frac{N \overline{X}}{N} = \overline{X}.
 ```
@@ -71,7 +71,7 @@ Let us now show how $\mathbb{E}\brackets{\hat{z}_N}$ is a lower bound for $z$.
 \end{aligned}       
 ```
 
-The first relation is simply the definition of a the minimum $x$. Next, we have the calculation of expectations on both sides, which preserves the inequality and leads to the next relation merely restating the definition of $\hat{z}_N$ inside the expectation. Next, we use the fact that if the inequality holds for all $x$, then it must hold for the minimum $x$. The last part missing is to use LLN to argue that, as $N \rightarrow \infty$, $\frac{1}{N}\sum_{n=1}^N F(x, \xi_n) \rightarrow F(x, \xi) \equiv f(x) = z$. Now, going back on the relations we stated, we notice that we arrived at $\mathbb{E}\brackets{\hat{z}_N} \le z$, thus proving that $\mathbb{E}\brackets{\hat{z}_N}$ is a lower bound for $z$.
+The first relation is simply the definition of the minimum $x$. Next, we have the calculation of expectations on both sides, which preserves the inequality and leads to the next relation merely restating the definition of $\hat{z}_N$ inside the expectation. Next, we use the fact that if the inequality holds for all $x$, then it must hold for the minimum $x$. The last part missing is to use LLN to argue that, as $N \rightarrow \infty$, $\frac{1}{N}\sum_{n=1}^N F(x, \xi_n) \rightarrow F(x, \xi) \equiv f(x) = z$. Now, going back on the relations we stated, we notice that we arrived at $\mathbb{E}\brackets{\hat{z}_N} \le z$, thus proving that $\mathbb{E}\brackets{\hat{z}_N}$ is a lower bound for $z$.
 
 Although we cannot directly calculate $\mathbb{E}\brackets{\hat{z}_N}$ (as we would need $N \rightarrow \infty$), we can approximate it using a sample estimate. This entails:
 
@@ -88,7 +88,7 @@ Although we cannot directly calculate $\mathbb{E}\brackets{\hat{z}_N}$ (as we wo
       L_N^M = \frac{1}{M} \sum_{m=1}^M \hat{z}^m_N.
    ```
 
-As before, notice that $L_N^M$ is a unbiased estimator (you can use the same LLN trick as before) for $\mathbb{E}\brackets{\hat{z}_N}$. Now, since $L_N^M$ provides estimates, we can use the CLT to provide confidence intervals to them. For that, we need a sample estimate for the variance $\sigma^2_{L_N^M}$, which can be obtained as
+As before, notice that $L_N^M$ is an unbiased estimator (you can use the same LLN trick as before) for $\mathbb{E}\brackets{\hat{z}_N}$. Now, since $L_N^M$ provides estimates, we can use the CLT to provide confidence intervals to them. For that, we need a sample estimate for the variance $\sigma^2_{L_N^M}$, which can be obtained as
 
 ```{math}
    s^2_{L_N^M} = \frac{1}{M-1}\sum_{m=1}^M (\hat{z}^m_N - L_N^M)^2.
@@ -126,7 +126,7 @@ Under the assumption of relatively complete recourse, we have that $z \le f(\hat
    U_{\overline{N}}^T = \frac{1}{T} \sum_{t=1}^T \check{z}_{\overline{N}}^t.
 ```
 
-Analogously, as $U_{\overline{N}}^T$ provides estimate for $f(\hat{x}^m_N)$, we can use the CLT to calculate a confidence interval for it. Once again, we start by calculating the sample estimate for the variance of $U_{\overline{N}}^T$, given by
+Analogously, as $U_{\overline{N}}^T$ provides an estimate for $f(\hat{x}^m_N)$, we can use the CLT to calculate a confidence interval for it. Once again, we start by calculating the sample estimate for the variance of $U_{\overline{N}}^T$, given by
 
 ```{math}
    s^2_{U_{\overline{N}}^T} = \frac{1}{T-1}	\sum_{t=1}^T (\check{z}_{\overline{N}}^t - U_{\overline{N}}^T)^2,
@@ -142,12 +142,12 @@ to calculate a 1-$\alpha$ confidence interval for $U_{\overline{N}}^T$, given by
 ```{admonition} Similarities between out-of-sample stability and SAA upper bounding
 :class: note
 
-When performing a out-of-sample analysis, we use Monte Carlo sampling to evaluate the sample mean and variance of $f(x^k)$ for a solution $x^k = \arg\min F(x, \xi^k)$ using a scenario tree $\xi^k$. SAA upper bounding is precisely the same thing, assuming that $\xi^k$ is the sample $m'$ of $N$ and $x^k$ is $\hat{x}^{m'}_N$.  
+When performing an out-of-sample analysis, we use Monte Carlo sampling to evaluate the sample mean and variance of $f(x^k)$ for a solution $x^k = \arg\min F(x, \xi^k)$ using a scenario tree $\xi^k$. SAA upper bounding is precisely the same thing, assuming that $\xi^k$ is the sample $m'$ of $N$ and $x^k$ is $\hat{x}^{m'}_N$.  
 ```
 
 ## Estimating optimality gaps
 
-In possession of estimates for upper and lower bounds on $z$, it is natural to consider how we can use then to estimate of how far away from the true optimal $z$ we may be. In this context, *optimality gap* refers to the quantity of interest
+In possession of estimates for upper and lower bounds on $z$, it is natural to consider how we can use them to estimate how far away from the true optimal $z$ we may be. In this context, *optimality gap* refers to the quantity of interest
 
 ```{math}
    f(\hat{x}^{m'}_N) - z.
@@ -179,20 +179,20 @@ A word of caution though: unfortunately $gap(N,M,\overline{N},T)$ is a biased es
 
 Although it does bear consequences on some particular cases (for example, using this as a stopping criterion in an algorithm), in practice this bias is not as worrisome, since $gap(N,M,\overline{N},T)$ *overestimates* $f(\hat{x}^{m'}_N) - z$. Thus, the only issue is that the true optimality gap my be smaller than the one we are estimating, which is a positive thing.
 
-Another issue associated with $gap(N,M,\overline{N},T)$ is its dependency on the sample-estimated variance of both $L_N^M$ and $U_{\overline{N}}^T$, which lead to significantly wide confidence intervals. To mitigate this, one can consider trying to reduce the sample variances, i.e.,:
+Another issue associated with $gap(N,M,\overline{N},T)$ is its dependency on the sample-estimated variance of both $L_N^M$ and $U_{\overline{N}}^T$, which leads to significantly wide confidence intervals. To mitigate this, one can consider trying to reduce the sample variances, i.e.,:
 
 1. reduce $s^2_{L_N^M}$, via increasing $N$ and $M$;
 2. reduce $s^2_{U_{\overline{N}}^T}$ by increasing $\overline{N}$ and $T$.
 
-There are some trade-offs that must be observes when trying to reduce variance.For example, larger $N$ leads to larger problems, but they can be solved as $M$ parallel problems. In turn, larger $\overline{N}$ leads to more costly evaluation,bout are solvable as $T$ (as $\overline{N} \times T$ for 2SSPs) parallel problems.
+Some trade-offs must be observed when trying to reduce variance. For example, larger $N$ leads to larger problems, but they can be solved as $M$ parallel problems. In turn, larger $\overline{N}$ leads to more costly evaluation, but are solvable as $T$ (as $\overline{N} \times T$ for 2SSPs) parallel problems.
 
 ## Final remarks
 
-Designing an efficient SAA approach to a stochastic programming problem requires a a few design choices that may considerably affect the quality of the solution and bounds obtained.
+Designing an efficient SAA approach to a stochastic programming problem requires a few design choices that may considerably affect the quality of the solution and bounds obtained.
 
 One important decision is the *choice of the solution* $\hat{x}^{m'}_N$. If computationally feasible, ideally one would evaluate all distinct solutions $\hat{x}^{m}_N$ for $m \in \brackets{M}$ and choose that with best $L_N^M$, $U_{\overline{N}}^T$ or $gap(N,M,\overline{N},T)$. However, often this is not possible, and many authors opt to choose the solution that has the highest lower bound $L_N^M$.
 
-Of the parameters that must be set, $N$, i.e., the number of scenarios in each scenario tree for calculating the lower bound estimate $L_N^M$, is possibly the most critical. Ideally, one would prefer to have $N$ small, as it bears the most strain to the computational requirements. However, a too small $N$ may lead to too many distinct solutions $\hat{x}^{m}_N$, $m \in [M]$, which is an indication of lack ofg stability. The previosuly discussed ideas relating to {ref}`error_and_stability` also apply to the definition of $N$.
+Of the parameters that must be set, $N$, i.e., the number of scenarios in each scenario tree for calculating the lower bound estimate $L_N^M$, is possibly the most critical. Ideally, one would prefer to have $N$ small, as it bears the most strain on the computational requirements. However, a too small $N$ may lead to too many distinct solutions $\hat{x}^{m}_N$, $m \in [M]$, which is an indication of lack of stability. The previously discussed ideas relating to {ref}`error_and_stability` also apply to the definition of $N$.
 
 One powerful idea that can be combined with SAA with beneficial consequences is the use of nonindependent sampling schemes, such as Latin hypercube sampling or any other quasi-Monte Carlo Sampling, to which CLT results are also known. 
 
