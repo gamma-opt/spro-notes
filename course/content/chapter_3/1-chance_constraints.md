@@ -1,6 +1,6 @@
-# Modelling risk in stochastic programming
+# Chance constraints
 
-## Introduction
+## Modelling risk in stochastic programming
 
 Stochastic programming models as posed so far disregard feasibility considerations whilst assuming that solutions must be such that feasibility is attained (relatively complete recourse) for all scenarios. This may turn to be both too simplistic and too strict, in particular in settings where reliability issues security concerns must be taken into account.
 
