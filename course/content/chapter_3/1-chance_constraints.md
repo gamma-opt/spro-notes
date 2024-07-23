@@ -2,17 +2,13 @@
 
 ## Introduction
 
-One key premise of stochastic programming models is that we assume the performance of the recourse decisions to be assessed against *expected values*. That means that the decisions are made from a risk neutral stance.
+Stochastic programming models as posed so far disregard feasibility considerations whilst assuming that solutions must be such that feasibility is attained (relatively complete recourse) for all scenarios. This may turn to be both too simplistic and too strict, in particular in settings where reliability issues security concerns must be taken into account.
 
-Being risk neutral essentially means that the only factor taken into account is the product likelihood (or probability) and outcome. This however fails to reflect how decision makers may have their preferences affected regarding solution that expose them to worst-outcome scenarios, even if they yield lower expected values.
-
-Analogously, stochastic programming models as posed so far disregard feasibility considerations whilst assuming that solutions must be such that feasibility is attained (relatively complete recourse) for all scenarios. This may turn to be both too simplistic and too strict, in particular in settings where reliability issues security concerns must be taken into account.
-
-We will consider to alternative, yet interconnected views of risk for modelling problems using stochastic programming. These modelling approaches are intended to provide additional modelling techniques that will augment our capabilities in representing the nature of the uncertainty we want to focus on.
+We will consider a few alternatives to address this, which are in many ways interconnected. These modelling techniques will serve to augment our capabilities in representing the decision makers perspective regarding how the uncertainty must be taken into account.
 
 ## Chance constraints
 
-The first alternative is related *feasibility* of solutions, and how we approach feasibility from a probabilistic setting. Essentially, we are interested in developing a model that can offer a probabilistic certificate to feasibility.
+The first alternative is related to the *feasibility* of solutions, and how we approach feasibility from a probabilistic setting. Essentially, we are interested in developing a model that can offer a probabilistic certificate to feasibility.
 
 There are two main paradigms for modelling feasibility requirements. Let us consider the constraint
 
@@ -23,7 +19,7 @@ T(\xi) x = h(\xi), \ \forall \xi \in \Xi.
 
 The first alternative is to impose that we require {eq}`static_eq` to be feasible for any realisation of $\xi$ within a set of realisations $U \subseteq \Xi$. This is strongly tied with the notion of robust optimisation and, as such, we will put on hold and discuss at a later moment in these notes.
 
-The other consist of enforcing that the *probability* of {eq}`static_eq` holding is at least a given threshold. Probabilistic constraints as such are often called *chance constraints* in the stochastic programming literature.
+The other consists of enforcing that the *probability* of {eq}`static_eq` holding is at least a given threshold. Probabilistic constraints as such are often called *chance constraints* in the stochastic programming literature.
 
 ```{admonition} Static models
 :class: note
@@ -52,7 +48,7 @@ p(x) = \mathbb{P}(T(\xi)_i ^\top x = h(\xi)_i, \ \forall i \in [m_2]) \ge \alpha
 
 Notice that in this case, there is no differentiation regarding which constraints are required to be feasible. Instead, feasibility is seen as a general concept (and arguably more natural) perspective.
 
-Although the difference may seem sutil from a formulation standpoint, it turns out that joint chance constraints such as {eq}`JCC` are typically challenging regarding its numerical tractability. 
+Although the difference may seem subtle from a formulation standpoint, it turns out that joint chance constraints such as {eq}`JCC` are typically challenging regarding their numerical tractability. 
 
 ### Tractability of chance constraints
 
@@ -73,7 +69,7 @@ These tractability issues associated with chance constraints stem from the geome
 	\end{align*}
 ```
 
-A crucial issue is that the convexity of $C_i(\alpha_i)$ (and consequently, the convexity of $C(\alpha_1, \dots, \alpha_{m_2})$)is not generally guaranteed, precluding the use of efficient convex optimization methods.
+A crucial issue is that the convexity of $C_i(\alpha_i)$ (and consequently, the convexity of $C(\alpha_1, \dots, \alpha_{m_2})$)is not generally guaranteed, precluding the use of efficient convex optimisation methods.
 
 However, there are some particular cases in which the convexity of $C(\alpha_1, \dots, \alpha_{m_2})$ can be asserted. For example, assume that $T(\xi) = T, \forall \xi \in \Xi$, i.e., that the matrix $T$ is not uncertain. Also, assume that $h(\xi) = \xi$. Then, for the univariate case, we have that
 
@@ -92,7 +88,7 @@ Let $T(\xi) = T$, $\forall \xi \in \Xi$, and $h(\xi) = \xi$, where $\xi \in \rea
 
 The most frequent setting in which this is a useful result is the setting where $\xi$ follows a normal distribution with vector mean $\mu$ and covariance matrix $\Sigma$. However, the result can be extended to a wider set of probability distributions. {cite}`nemirovski2007convex` present a comprehensive analysis of other probability distributions that yield convex representations.
 
-Another tractable known case is that when we assume a single constraint with multiple random coefficients. Let $T(\xi)$ be a $1 \times n$ random vector and let us assume that $h(\xi) = h$, $\forall \xi \in \Xi$. Theorem {prf:ref}`multi-variate-convexity-2` provides a convex reformulation for the chance constraint.
+Another tractable known case is when we assume a single constraint with multiple random coefficients. Let $T(\xi)$ be a $1 \times n$ random vector and let us assume that $h(\xi) = h$, $\forall \xi \in \Xi$. Theorem {prf:ref}`multi-variate-convexity-2` provides a convex reformulation for the chance constraint.
 
 ```{prf:theorem}
 :label: multi-variate-convexity-2
@@ -120,7 +116,7 @@ All of the tractability issues previously discussed stem from the challenging an
 
 However, once a scenario representation is available, as it is typically the case in stochastic programming settings, convexity becomes a given, provided that the original problem is convex.
 
-This more general setting enables the consideration of much more sophisticated settings when it comes to modelling the uncertainty, including the incorporation of stages. However, one key disadvantage is that these scenario-based chance constraint formulations require the employment of additional binary variables.
+This more general setting enables the consideration of much more sophisticated settings when it comes to modelling uncertainty, including the incorporation of stages. However, one key disadvantage is that these scenario-based chance constraint formulations require the employment of additional binary variables.
 
 Let us start posing our standard formulation for a two-stage stochastic programming model with recourse in its deterministic equivalent form:
 
@@ -150,9 +146,9 @@ Let $v_s \in \braces{0,1}$, $u_s \in \reals$ and $\forall s \in S$ be auxiliary 
 
 Notice how the formulation operates. For each scenario $s \in S$, the auxiliary variable $u_s$ captures the deviation between the left- and right-hand sides of constraint $T_sx + W_s y_s = h_s + u_s$. In turn, if $u_s$ takes a value different than zero this activates the binary variable $v_s$. The accumulated probability of all infeasible scenarios is then bounded to be $1- \alpha$.
 
-Some final remarks about this formulation. First, recall that absolute values can be trivially linearised. Also, if the constraint is instead an inequality, one can discard the absolute value all together and consider only nonnegative deviations.
+Some final remarks about this formulation. First, recall that absolute values can be trivially linearised. Also, if the constraint is instead an inequality, one can discard the absolute value altogether and consider only nonnegative deviations.
 
-The term $\sum_{s \in S} P_s v_s \le 1-\alpha$ provides the infeasibility probability, which can be calculated thanks to the additional $|S|$ binary variables. For a larger number of scenarios, this may be a computational hinderance. One variant of this formulation, known as *integrated chance constraints*, imposes limits to the expected amount of infeasibility, i.e., the value of variables $u_s$ (or their absolute value, for equality constraints), $\forall s \in S$. Then, one can use instead
+The term $\sum_{s \in S} P_s v_s \le 1-\alpha$ provides the infeasibility probability, which can be calculated thanks to the additional $|S|$ binary variables. For a larger number of scenarios, this may be a computational hindrance. One variant of this formulation, known as *integrated chance constraints*, imposes limits to the expected amount of infeasibility, i.e., the value of variables $u_s$ (or their absolute value, for equality constraints), $\forall s \in S$. Then, one can use it instead
 
 ```{math}
 \sum_{s \in S} P_s u_s \le \beta,

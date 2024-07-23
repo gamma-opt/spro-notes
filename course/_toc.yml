@@ -21,7 +21,8 @@ parts:
   - file: content/chapter_2/4-sample_average_approximation.md
 - caption: 'Chance constraints and risk measures'
   chapters:
-  - file:  content/chapter_3/1-risk_modelling.md
+  - file:  content/chapter_3/1-chance_constraints.md
+  - file:  content/chapter_3/2-risk_measures.md
 # - caption: 'Robust optimisation'
 # - caption: 'Decomposition methods'
 - caption: ' '
