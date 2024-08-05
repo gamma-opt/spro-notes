@@ -1,6 +1,6 @@
 title: Course template
 author: Tunç Başar Köse
-logo: _static/sidebar_logo.png
+logo: _static/sidebar_logo.svg
 only_build_toc_files: true
 
 # Code execution settings
