@@ -1,5 +1,5 @@
-title: Course template
-author: Tunç Başar Köse
+title: Stochastic programming and robust optimisation
+author: Fabricio Oliveira
 logo: _static/sidebar_logo.svg
 only_build_toc_files: true
 
@@ -26,7 +26,7 @@ latex:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/gamma-opt/jb_course_template  # Online location of your book
+  url: https://github.com/gamma-opt/spro-notes  # Online location of your book
   branch: main                                          # Which branch of the repository should be used when creating links (optional)
 
 sphinx:
@@ -44,6 +44,9 @@ sphinx:
       loader:
         load: ["[tex]/textmacros"]  # For ~ to work as non-breaking space
       tex:
+        packages:
+          "[+]": ["textmacros"]     # For ~ to work as non-breaking space
+        # If you add something, you should probably add to latex_elements below as well
         packages:
           "[+]": ["textmacros"]     # For ~ to work as non-breaking space
         # If you add something, you should probably add to latex_elements below as well

@@ -1,2 +1,31 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
 format: jb-book
 root: intro
+parts:
+- caption: 'Introduction to stochastic programming'
+  numbered: true
+  chapters:
+  - file: content/chapter_1/1-the_farmers_problem.md
+  - file: content/chapter_1/2-two-stage_stochastic_programming.md
+  - file: content/chapter_1/3-EVPI_and_VSS.md
+  - file: content/chapter_1/4-recourse_types.md
+  - file: content/chapter_1/5-multi-stage_problems.md  
+- caption: 'Uncertainty representation in stochastic programming'
+  numbered: true
+  chapters: 
+  - file: content/chapter_2/1-scenario_trees.md
+  - file: content/chapter_2/2-quality_measures.md
+  - file: content/chapter_2/3-scenario_generation_methods.md
+  - file: content/chapter_2/4-sample_average_approximation.md
+- caption: 'Chance constraints and risk measures'
+  numbered: true
+  chapters:
+  - file:  content/chapter_3/1-chance_constraints.md
+  - file:  content/chapter_3/2-risk_measures.md
+# - caption: 'Robust optimisation'
+# - caption: 'Decomposition methods'
+- caption: ' '
+  chapters:
+  - file: content/bibliography.md
