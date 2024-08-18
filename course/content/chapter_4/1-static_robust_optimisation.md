@@ -17,16 +17,24 @@ For now, we will focus on the static case and consider continuous uncertainty se
 ```{math}
     \begin{align}
 		\mini_x & c^\top x \\
-		\st & A_i^\top x \le b_i, \ \forall i \in [m] \\
-		& x \in X.
+		\st & Ax \le b \\
+    & x \ge 0
     \end{align}    
 ```
 
-
-
+where $A$ is an $m \times n$ matrix. Let us assume that given row of $A$, say $i \in [m]$, has uncertain coefficients. Our developments will focus on how to devise a *robust counterpart* that takes into consideration such uncertainty and, under particular assumptions, provide a solution that is protected against such uncertainty. 
 
 ## Robust counterparts
 
+Let us first reformulate our model to expose the uncertain constraint. Let $A_i$ be the $i$-th row of $A$. Then, let $X = \braces{A_{i'}^\top x \le b_{i'}, i' \in [m] : i' \neq i; x \ge 0 }$, so we can compactly reformulate our deterministic problem as
+
+```{math}
+    \begin{align}
+		\mini_x & c^\top x \\
+		\st & A_i^x \le b_i \\
+    & x \in X. 
+    \end{align}    
+```
 
 
 ## Uncertainty set geometries

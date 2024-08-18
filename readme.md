@@ -2,8 +2,10 @@
 [![jupyterbook-pdf](../../actions/workflows/jupyterbook-pdf.yml/badge.svg)](../../actions/workflows/jupyterbook-pdf.yml)
 
 
-# `jupyter-book` template for course notes/website
+# Optimisation notes - stochastic programming and robust optimisation
 
-See [this repo](https://github.com/gamma-opt/jb_instructions) for instructions/explanations.
+This repo contains the notes I use to teach short courses and full semester courses "Stochastic and Robust Optimisation". 
 
-Link to page [here](https://gamma-opt.github.io/spro-notes/)
+This notes are a work in progress and a constantly being updated. At the moment, they are under construction and should not be used as a reference in your academic work. Later, I intend to have a proper release and associated DOI.
+
+I can guarantee these are not free of error. If you find any, please get in touch.

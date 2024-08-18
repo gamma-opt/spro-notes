@@ -26,9 +26,11 @@ parts:
 - caption: 'Robust optimisation'
   numbered: true
   chapters:
-  - file:  content/chapter_4/1-static-robust.md
+  - file:  content/chapter_4/1-static_robust_optimisation.md
+  - file:  content/chapter_4/2-adjustable_robust_optimisation.md
 
 # - caption: 'Decomposition methods'
+
 - caption: ' '
   chapters:
   - file: content/bibliography.md
