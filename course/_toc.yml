@@ -1,5 +1,4 @@
 # Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
 root: intro
@@ -24,7 +23,11 @@ parts:
   chapters:
   - file:  content/chapter_3/1-chance_constraints.md
   - file:  content/chapter_3/2-risk_measures.md
-# - caption: 'Robust optimisation'
+- caption: 'Robust optimisation'
+  numbered: true
+  chapters:
+  - file:  content/chapter_4/1-static-robust.md
+
 # - caption: 'Decomposition methods'
 - caption: ' '
   chapters:
